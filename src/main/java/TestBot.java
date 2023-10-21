@@ -10,7 +10,6 @@ public class TestBot extends BotDriver {
         activity = Activity.watching("Test runs!!!");
         TOKEN = "TEST_BOT";
     }
-
     public TestBot() throws LoginException {
         super();
         shardManager.addEventListener(new TestMain(VERSION));
