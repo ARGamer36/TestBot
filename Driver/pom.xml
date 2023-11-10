@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>win.biosInterweb.discordBots</groupId>
-            <artifactId>ARJI</artifactId>
+            <artifactId>TestBot</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
