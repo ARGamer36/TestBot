@@ -2,12 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>TestBot</artifactId>
+        <groupId>win.biosInterweb.discordBots</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>win.biosInterweb.discordBots</groupId>
-    <artifactId>TestBot</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>Driver</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -15,15 +17,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <modules>
-        <module>ARJI</module>
-        <module>Driver</module>
-    </modules>
-
     <dependencies>
         <dependency>
             <groupId>win.biosInterweb.discordBots</groupId>
-            <artifactId>ARJI</artifactId>
+            <artifactId>TestBot</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
