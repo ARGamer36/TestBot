@@ -3,7 +3,7 @@ import net.dv8tion.jda.api.entities.Activity;
 
 import javax.security.auth.login.LoginException;
 
-public class TestBotDriver extends BotDriver {
+public class TestBotDriver extends TestBot {
     @Override
     protected void setup() {
         VERSION = "1.0";
