@@ -15,7 +15,7 @@ WORKDIR /tmp/
 COPY --from=clone /gittmp/ARJI/ /tmp/
 COPY --from=clone /gittmp/Driver/ /tmp/
 COPY --from=clone /gittmp/pom.xml /tmp/pom.xml
-COPY --from=clone /gittmp/.gitmodules /tmp/.gitmodules
+#COPY --from=clone /gittmp/.gitmodules /tmp/.gitmodules
 RUN mvn clean package
 
 # Run Stage
