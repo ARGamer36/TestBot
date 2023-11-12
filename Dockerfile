@@ -1,13 +1,22 @@
-# Build Stage
-FROM maven:3.8.3-openjdk-17 AS build
+# Cloning Stage
+FROM alpine:3.18 AS clone
+
 RUN apt-get update && apt-get install -y \
     git
-WORKDIR /tmp
+WORKDIR /gittmp/
 
-RUN git clone https://github.com/ARGamer36/TestBot.git
+RUN git clone https://github.com/aldairjpalma/TestBot.git
 RUN git submodule init
 RUN git submodule update
 RUN mv ARJIpom.xml ./ARJI/pom.xml
+
+#Building  Stage
+FROM maven:3.8.3-openjdk-17 AS build
+WORKDIR /tmp/
+COPY --from=clone /gittmp/ARJI/ /tmp/
+COPY --from=clone /gittmp/Driver/ /tmp/
+COPY --from=clone /gittmp/pom.xml /tmp/pom.xml
+COPY --from=clone /gittmp/.gitmodules /tmp/.gitmodules
 RUN mvn clean package
 
 # Run Stage
