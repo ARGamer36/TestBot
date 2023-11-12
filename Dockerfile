@@ -5,8 +5,9 @@ RUN apk update && apk add --no-cache git
 
 WORKDIR /gittmp/
 RUN git clone https://github.com/aldairjpalma/TestBot.git 
+WORKDIR /gittmp/TestBot/
 RUN git clone https://github.com/ARGamer36/ARJI.git 
-RUN mv /gittmp/ARJIpom.xml /gittmp/ARJI/pom.xml
+RUN mv /gittmp/TestBot/ARJIpom.xml /gittmp/TestBot/ARJI/pom.xml
 
 #Building  Stage
 FROM maven:3.8.3-openjdk-17 AS build
