@@ -1,8 +1,7 @@
 # Cloning Stage
 FROM alpine:3.18 AS clone
 
-RUN apt-get update && apt-get install -y \
-    git
+RUN apt-get update && apt-get install -y git
 WORKDIR /gittmp/
 
 RUN git clone https://github.com/aldairjpalma/TestBot.git
