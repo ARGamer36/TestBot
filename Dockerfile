@@ -2,11 +2,10 @@
 FROM alpine:3.18 AS clone
 
 RUN apk update && apk add --no-cache git
-WORKDIR /gittmp/
 
-RUN git clone https://github.com/aldairjpalma/TestBot.git .
-RUN git submodule init
-RUN git submodule update
+WORKDIR /gittmp/
+RUN git clone https://github.com/aldairjpalma/TestBot.git
+RUN git clone https://github.com/ARGamer36/ARJI.git
 RUN mv ARJIpom.xml ./ARJI/pom.xml
 
 #Building  Stage
