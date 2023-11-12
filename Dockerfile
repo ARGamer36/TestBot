@@ -12,9 +12,9 @@ RUN mv /gittmp/TestBot/ARJIpom.xml /gittmp/TestBot/ARJI/pom.xml
 #Building  Stage
 FROM maven:3.8.3-openjdk-17 AS build
 WORKDIR /tmp/
-COPY --from=clone /gittmp/ARJI/ /tmp/
-COPY --from=clone /gittmp/Driver/ /tmp/
-COPY --from=clone /gittmp/pom.xml /tmp/pom.xml
+COPY --from=clone /gittmp/TestBot/ARJI/ /tmp/TestBot/ARJI/
+COPY --from=clone /gittmp/TestBot/Driver/ /tmp/TestBot/Driver/
+COPY --from=clone /gittmp/TestBot/pom.xml /tmp/TestBot/pom.xml
 #COPY --from=clone /gittmp/.gitmodules /tmp/.gitmodules
 RUN mvn clean package
 
