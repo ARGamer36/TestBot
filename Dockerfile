@@ -21,7 +21,7 @@ RUN mvn clean package
 
 # Run Stage
 FROM openjdk:17-alpine
-COPY --from=build /tmp/TestBot/Driver/target/*.jar /user/testbot/
+COPY --from=build /tmp/TestBot/Driver/target/Interweb-jar-with-dependencies.jar /user/testbot/Interweb-jar-with-dependencies.jar
 RUN mv /user/tesbot/Interweb-jar-with-dependencies.jar /user/testbot/app.jar
 WORKDIR /user/testbot/
 CMD ["java", "-jar", "app.jar"]
