@@ -4,7 +4,7 @@ FROM alpine:3.18 AS clone
 RUN apk update && apk add --no-cache git
 
 WORKDIR /gittmp/
-RUN git clone https://github.com/aldairjpalma/TestBot.git 
+RUN git clone https://github.com/ARGamer36/TestBot.git
 WORKDIR /gittmp/TestBot/
 RUN git clone https://github.com/ARGamer36/ARJI.git 
 RUN mv /gittmp/TestBot/ARJIpom.xml /gittmp/TestBot/ARJI/pom.xml
